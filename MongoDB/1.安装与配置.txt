@@ -1,6 +1,6 @@
 未使用本地安装MongoDB进行学习。在MongoDB官网使用免费提供的MongoDB Cluster进行练习
-一  新建名为Mongo的集群
-二  下载安装Mongo Shell
+- 新建名为Mongo的集群
+- 下载安装Mongo Shell
     - 安装Mongo Shell
         brew install mongodb/brew/mongodb-community-shell
     - 配置环境变量

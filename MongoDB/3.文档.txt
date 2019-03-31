@@ -1,27 +1,59 @@
-文档(cn = collection_name  dn = document_name)
-- 插入文档
-    - 指令
-        db.cn.insert(dn)
-        db.cn.save(dn)
-    - 说明
-        cn若没有自动创建
-        dn可以为单个文档或者文档数组
-    - 其他指令
-        insertOne insertMany
-- 查询文档
-    - 指令 db.cn.find(dn)
-    - 说明 以非结构化的方式显示所有文档
-    - 指令 pretty()
-    - 说明 格式化(db.cn.find(dn).pretty())
-    - where子句
-        - == {"_id": "1"}
-        - <  {"_id": {$lt:1}}
-        - <= {"_id": {$lte:1}}
-        - >  {"_id": {$gt:1}}
-        - >= {"_id": {$gte:1}}
-    - AND与OR操作符
-        - 格式 $and：数组
-        - 示例 $and:[
-            {"_id": 1},
-            {"tilte": "test"}
-        ]
+- 文档(col = collection  doc = document)
+    - 插入文档
+        - 指令
+            db.col.insert(doc)
+        - 说明
+            col若没有自动创建
+            doc可以为单个文档或者文档数组
+            sava也可以用于插入文档
+        - 其他指令
+            insertOne insertMany
+    - 查询文档
+        - 指令 db.col.find(query, projection)
+        - 说明
+            以非结构化的方式显示所有文档
+            projection用于限定显示的键值
+        - 查询方法
+            - pretty() 格式化输出
+            - limit() 指定输出数量
+            - skip() 跳过指定数量输出
+            - sort({key:1/-1}) 指定键值排序 1:升序 -1:降序
+            - 说明 优先级为 sort > skip > limit
+        - 嵌套文档查询
+            - 格式 db.col.find({size:{x:1,y:2,z:3}})
+            - 指定查询
+                - 格式 db.col.find({"size.x":1})
+                - 说明 注意此处引号
+        - 模糊查询
+            - 格式 db.col.find({size:/正则/})
+            - 可通过正则表达式进行模糊查询
+    - 更新文档
+        - 指令 db.col.update(
+            <query>,
+            <update>,{
+                upsert: <boolean>,
+                multi: <boolean>,
+                writeConern: <doc>
+            }
+        )
+        - 说明
+            *query: 查询条件
+            *update: 更新的对象和一下操作符
+            upsert: 是否插入新对象(默认false)
+            multi: 多条更新(默认false)
+            writeConern: 抛出异常级别
+        - 指令 db.col.save(
+            <doc>,{
+                writeConern: <doc>
+            }
+        )
+    - 删除文档
+        - 指令 db.col.remove(
+            <query>,{
+                justOne: <boolean>,
+                writeConern: <doc>
+            }
+        )
+        - 说明
+            query: 当条件为{}即删除所有文档
+            justOne: 是否只删除一个文档(默认false)

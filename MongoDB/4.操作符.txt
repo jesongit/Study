@@ -1,0 +1,23 @@
+操作符一般用于查询时的子句查询
+- 条件操作符
+    - == {"_id": "1"}
+    - <  {"_id": {$lt:1}}
+    - <= {"_id": {$lte:1}}
+    - >  {"_id": {$gt:1}}
+    - >= {"_id": {$gte:1}}
+    - != {"_id": {$ne:1}}
+    - 说明
+        l: less
+        g: greater
+        t: than
+        e: equal
+- AND与OR操作符
+    - 格式 $and：数组  $or: 数组
+    - 说明 其中$and可以选择逗号隔开的方式代替
+    - 示例 $and:[
+        {"_id": 1},
+        {"tilte": "test"}
+    ]
+- 其他操作符
+    - $type
+        - 示例 db.col.find({'title': {$type: 'string'}})
