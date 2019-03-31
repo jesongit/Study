@@ -1,0 +1,46 @@
+MongoDB操作练习(学习于https://www.yiibai.com/mongodb)
+
+数据库
+- 创建数据库
+    - 指令  use database_name
+    - 示例  use newdb
+    - 查看当前选中数据库
+        - 指令  db
+    - 查看数据库列表
+        - 指令 show dbs
+        - 说明 此处不显示空数据库
+- 删除数据库
+    - 指令 db.dropDatabase()
+    - 说明 删除当前选中数据库  否则为默认(test)
+
+集合
+- 创建集合
+    - 指令 db.createCollection(name, options)
+        - option
+            capped : 是否封闭(达到上限覆盖旧条目)
+            autoIndexId : 自动索引
+            size : 集合大小(单位字节)
+            max : 最大文档数
+    - 说明 插入文档时会自动创建集合
+    - 查看集合列表
+        - 指令 show collections
+- 删除集合
+    - 指令 db.collection_name.drop()
+
+
+数据类型
+    - 字符串  必须为UTF-8
+    - 整型  32/64位取决于服务器
+    - 布尔类型  true/false
+    - 双精度浮点数
+    - 最小/大键  将值与最小和最大BSON元素进行比较
+    - 数组  可将多个值/数组/列表存储到一个键中
+    - 时间戳  ctimestamp
+    - 对象
+    - Null
+    - 符号  特定字符串
+    - 日期
+    - 对象ID
+    - 二进制数据
+    - 代码
+    - 正则表达式

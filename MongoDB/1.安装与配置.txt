@@ -1,0 +1,12 @@
+未使用本地安装MongoDB进行学习。在MongoDB官网使用免费提供的MongoDB Cluster进行练习
+一  新建名为Mongo的集群
+二  下载安装Mongo Shell
+    - 安装Mongo Shell
+        brew install mongodb/brew/mongodb-community-shell
+    - 配置环境变量
+        - vi ./.bash_profile
+        - 添加 export PATH=$PATH:/usr/local/Cellar/mongodb-community-shell/4.0.8/bin 
+        - ESC ->  :wq  ->  Enter
+    - 连接到Cluster
+        mongo "mongodb+srv://mongodb-stgfy.mongodb.net/test" --username root
+        键入MongoDB root用户密码  ->   连接成功

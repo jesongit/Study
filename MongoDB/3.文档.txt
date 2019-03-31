@@ -1,0 +1,27 @@
+文档(cn = collection_name  dn = document_name)
+- 插入文档
+    - 指令
+        db.cn.insert(dn)
+        db.cn.save(dn)
+    - 说明
+        cn若没有自动创建
+        dn可以为单个文档或者文档数组
+    - 其他指令
+        insertOne insertMany
+- 查询文档
+    - 指令 db.cn.find(dn)
+    - 说明 以非结构化的方式显示所有文档
+    - 指令 pretty()
+    - 说明 格式化(db.cn.find(dn).pretty())
+    - where子句
+        - == {"_id": "1"}
+        - <  {"_id": {$lt:1}}
+        - <= {"_id": {$lte:1}}
+        - >  {"_id": {$gt:1}}
+        - >= {"_id": {$gte:1}}
+    - AND与OR操作符
+        - 格式 $and：数组
+        - 示例 $and:[
+            {"_id": 1},
+            {"tilte": "test"}
+        ]
