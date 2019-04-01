@@ -1,6 +1,0 @@
-- 索引
-    - 创建索引
-        - 指令 db.col.createIndex(keys, options)
-            - keys -> {key1: 1, key2: -1}  键值和升/降序
-            - options
-                - 

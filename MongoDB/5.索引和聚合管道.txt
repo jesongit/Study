@@ -1,0 +1,22 @@
+- 索引
+    - 创建索引
+        - 指令 db.col.createIndex(keys, options)
+            - 旧指令 ensureIndex()
+            - keys -> {key1: 1, key2: -1}  键值和升/降序
+            - options
+                - background 是否后台创建索引(默认false)
+                - unique 是否唯一(默认false)
+                - name 不指定会自动生成
+                - sparse 是否包含未含有
+                - weights 指定其在索引中的权重大小(1 ~ 99999)
+    - 查看集合索引
+        - 指令 db.col.getIndexs()
+    - 查看集合索引大小
+        - 指令 db.col.totalIndexSize()
+    - 删除索引
+        - 指令 db.col.dropIndex(indexName)
+        - 说明 不指定indexName时删除所有索引
+- 聚合管道
+    - 指令 db.col.aggregate(operation)
+        - operation应该以一个数组的形式传入
+    - 相关操作符详见4.操作符

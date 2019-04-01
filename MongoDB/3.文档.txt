@@ -11,8 +11,10 @@
     - 查询文档
         - 指令 db.col.find(query, projection)
         - 说明
-            以非结构化的方式显示所有文档
+            query 当其为{}表示所有
             projection用于限定显示的键值
+                - 格式 db.col.find({},{$key:1/0})
+                - 说明 1表示显示 0标示不显示
         - 查询方法
             - pretty() 格式化输出
             - limit() 指定输出数量
