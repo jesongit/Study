@@ -1,0 +1,27 @@
+- String
+    - 比较
+        boolean "x == y" : 比较是否属于同一个内存
+        boolean x.equals(y) : 比较值是否相等
+        int x.compareTo(y) : 比较大小(参考ASCII字典序)
+    - 截取
+        String s.substring(start, end) : 截取s从start到end-1(默认结束)的子串
+        char s.charAt(n) : 截取s的第n个字符
+        String [] s.split(regex) : 关键字需要转义 如"\\|" 此处需要2个斜杠的愿意是因为正则中"\\"表示"\" 多个用"|" 连接
+    - 查询
+        int s.indexOf(str) : 返回s的第一个子串str的位置(没有返回-1)
+        boolean s.contains(str) : 是否存在子串str
+        boolean s.startsWith(str) : 是否以str开始
+        boolean s.endsWith(str) : 是否以str结束
+
+- StringBuffer
+    - 构造方法
+        StringBuffer() : 无参构造时, 分配空间16个字符, 可自增
+        StringBuffer(int size) : 指定分配字符个数, 可自增
+        StringBuffer(String s) : 分配s + 16个字符的空间, 可自增
+    - 容量和个数
+        buf.capacity() : 获取容量
+        buf.length() : 获取字符个数
+    - 常用方法
+        buf.append(Object) : 追加对象(与String不同的是会改变自身)
+        buf.insert(int index, Object) : 再index处插入Object
+        buf.delete(int start, int end) : 删除start到end-1的串

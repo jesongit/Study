@@ -1,0 +1,40 @@
+- static
+    - 静态变量
+        例
+        public class People {
+            static int id = 1;
+            public People(int id) {
+                this.id = id;
+            }
+            public static void main(String[] args) {
+                System.out.println(People.id); // 1
+                People p1 = People(2);
+                System.out.println(People.id); // 2
+                String.out.println(p1.id);     // 2
+                People p2 = People(3);
+                System.out.println(People.id); // 3
+                String.out.println(p1.id);     // 3
+                System.out.println(p2.id);     // 3
+            }
+        }
+        此处id为静态变量。只依赖于类People存在。所有对象共享一个变量
+    - 静态方法
+        1. 静态方法只能调用静态变量
+        2. 非静态方法无法调用静态方法
+        在静态方法中
+           通过class.function()调用静态方法
+           通过object.function()调用非静态方法(也可以用此调用静态但是会warning)
+    - 静态代码块
+        - 格式
+            static{
+
+            }
+        在创建对象时候会先执行一次静态代码块(仅第一次new时执行一次), 再执行匿名代码块, 再执行构造函数.
+    
+- final
+    - final类 无法被继承
+    - final方法 子类无法重写该方法 但是可以重载
+    - final变量 基本类型无法重新赋值 类的话不可以修改指向的对象 可以改变其中的值(即无法指向新的类)
+
+    - 常量定义方法 public static final pi = 3.14
+        在接口中变量默认为常量
