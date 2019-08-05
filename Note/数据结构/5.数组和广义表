@@ -1,0 +1,37 @@
+- 数组
+    - 数组的抽象数据类型
+        ADT Array {
+            D = {a[i] | a[i] is ElemSet, i = [0, n], n >= 0}
+            R = {<a[i-1], a[i]> | a[i-1], a[i] in D, i = [1, n]}
+            P
+                InitArray(&A, n, b1, ... , bn)
+                DestroyArray(&A)
+                Value(A, &e, index)
+                Assign(&A, e, index)
+        }ADT Array
+    - 矩阵压缩存储
+        - 特殊矩阵：相同元素分布有一定规律的矩阵
+        - 稀疏矩阵：可以理解为零元素极多的矩阵
+            - 十字链表
+- 广义表
+    - 广义表的抽象数据类型
+        ADT GList {
+            D = {e[i] | i = [0,n] n >= 0; e[i] is AtomSet or e[i] is GList}
+            R = {<e[i-1], e[i]> | e[i-1], e in D, 1 <= i <= n}
+            P
+                InitGList(&L)
+                CreateGLits(&L, S)
+                DestroyGList(&L)
+                CopyGList(&T, L)
+                GListLength(L)
+                GListDepth(L)
+                GListEmpty(L)
+                GetHead(L)
+                GetTail(L)
+                InserFirstGL(&L, e)
+                DeleteFirst_GL(&L, &e)
+                Tracerse)GL(L, visit())
+        }ADT GList
+    - 广义表的结点
+        - 表结点：由标志域、指示表头和指针域
+        - 原子结点：标志域和值域

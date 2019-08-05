@@ -1,0 +1,36 @@
+- 线性表
+    - 定义：n个数据元素的有限序列
+    - 线性表的抽象数据类型
+        ADT List {
+            D = {a[i] | a[i] is ElemSet, i = [0, n], n >= 0}
+            R = { <a[i-1], a[i]> | a[i-1],a[i] in D, i = [1, n]}  //前驱关系
+            P
+                InitList(&L)
+                DestyoyList(&L)
+                ClearList(L)
+                ListEmpty(L)
+                ListLength(L)
+                GetElem(L, i, &e)
+                LocateElem(L, e, compare())
+                PriorElem(L, cur_e, &pre_e)
+                NextElem(L, cur_e, &next_e)
+                ListInsert(&L, i, e)
+                ListDelete(&L, i, &e)
+                ListTraverse(L, visit())
+        }ADT List
+    - 线性表的顺序存储结构
+        - 通过数组方式实现线性表， 存取的复杂度为O(1)，但是插入和删除的复杂度为O(n)
+        - 数组长度难以确定、容易造成空间碎片
+        - 适用于少修改，多查询的情况
+    - 线性表的链式存储结构
+        - 通过链表方式实现线性表， 存取复杂度为O(n), 在已知前驱位置的情况下插入和删除复杂度为O(1)
+        - 适用于多次修改或者容量未知的情况
+        - 头指针和头节点
+            - 头指针：一定是指向线性表的第一个节点（可为空，必须有）
+            - 头节点：为了操作数据的便利可以添加头节点，数据域无意义（可以存储长度或自定义）（非必要元素）
+        - 静态链表：通过数组来实现链表
+        - 循环链表：尾结点指向头结点的链表（可以在O(1)时间类找到尾部和头部）
+        - 双向链表：每个结点有2个指针域直线前驱和后继的链表
+
+    - 线性表的实现
+        源码参考：https://www.cnblogs.com/qq188380780/p/7482390.html

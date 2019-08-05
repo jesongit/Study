@@ -1,0 +1,42 @@
+- 栈
+    - 定义：限定只能在表尾插入或删除的线性表
+    - 栈的抽象数据类型
+        ADT Stack {
+            D = {a[i] | a[i] is ElemSet, i = [0, n], n >= 0}
+            R = {<a[i-1], a[i]> | a[i-1], a[i] in D, i = [1, n]}
+            P
+            InitStack(&S)
+            DestroyStack(&S)
+            ClearStack(&S)
+            StackEmpty(S)
+            StackLength(S)
+            GetTop(S, &e)
+            Push(&S, e)
+            Pop(&S, &e)
+            StackTraverse(S, visit())
+        }ADT Stack
+    - 栈的表示和实现
+        - 顺序栈
+        - 链式栈
+    - 栈与递归
+        - 递归就是通过栈实现的
+- 队列
+    - 定义：限定只能在一段插入，另一端删除的线性表
+    - 队列的抽象数据类型
+        ADT Queue{
+            D = {a[i] | a[i] is ElemSet, i = [0, n], n >= 0}
+            R = {<a[i-1], a[i]> | a[i-1], a[i] in D, i = [1, n]}
+            P
+                InitQueue(&Q)
+                DestroyQueue(&Q)
+                ClearQueue(&Q)
+                QueueEmpty(Q)
+                QueueLength(Q)
+                GetHead(Q, &e)
+                EnQueue(&Q, e)
+                DeQueue(&Q, &e)
+                QueueTraverse(Q, visit())
+        }ADT Queue
+    - 队列的表示和实现
+        - 链队列
+        - 循环队列（顺序实现）

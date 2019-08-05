@@ -1,0 +1,28 @@
+- 字符串
+    - 定义：由零个或多个字符组成的有限序列
+    - 字符串的抽象数据类型
+        ADT String {
+            D = {a[i] | a[i] is CharacterSet, i = [0, n], n >= 0}
+            R = {<a[i-1], a[i]> | a[i-1], a[i] in D, i = [1, n]}
+            P
+                StrAssign(&T, chars)
+                StrCopy(&T, S)
+                StriEmpty(S)
+                StrCompare(S, T)
+                StrLength(S)
+                ClearString(&S)
+                Concat(&T, S1, S2)
+                SubString(&Sub, S, pos, len)
+                Index(S, T, pos)
+                Replace(&S, T, V)
+                StrInsert(&S, pos, T)
+                StrDelete(&S, pos, len)
+                DestroyString(&S)
+        }ADT String
+    - 字符串的表示和实现
+        - 定长字符串的顺序存储
+        - 字符串的块链式存储
+    - 字符串的模式匹配算法
+        - BF算法（朴素模式匹配）
+        - KMP算法
+            - next数组的计算
